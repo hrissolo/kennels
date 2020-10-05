@@ -1,10 +1,14 @@
 import React from "react";
 import { Route } from "react-router-dom"
 import { Home } from "./Home"
-import { AnimalCard } from "./animal/AnimalCard"
-import { CustomerCard } from "./customer/CustomerCard"
-import { LocationCard } from "./location/LocationCard"
-import { EmployeeCard } from "./employee/EmployeeCard"
+import { AnimalProvider } from "./animal/AnimalProvider"
+import { AnimalList } from "./animal/AnimalList"
+import { LocationProvider } from "./location/LocationProvider"
+import { CustomerProvider } from "./customer/CustomerProvider"
+import { CustomerList } from "./customer/CustomerList"
+import { LocationList } from "./location/LocationList"
+import {EmployeeList} from "./employee/EmployeeList"
+import {EmployeeProvider} from "./employee/EmployeeProvider"
 
 export const ApplicationViews = (props) => {
     return (
@@ -14,25 +18,32 @@ export const ApplicationViews = (props) => {
                 <Home />
             </Route>
 
-            {/* Render the animal list when http://localhost:3000/animals */}
-            <Route path="/animal">
-                <AnimalCard />
-            </Route>
+            <AnimalProvider>
+                <Route exact path="/animal">
+                    <AnimalList />
+                </Route>
+            </AnimalProvider> 
 
             {/* Render the location list when http://localhost:3000/locations */}
-            <Route path="/location">
-                <LocationCard />
-            </Route>
+            <LocationProvider>
+                <Route path="/location">
+                    <LocationList />
+                </Route>
+            </LocationProvider>
 
             {/* Render the customer list when http://localhost:3000/customers */}
-            <Route path="/customer">
-                <CustomerCard />
-            </Route>
+            <CustomerProvider>
+                <Route path="/customer">
+                    <CustomerList />
+                </Route>
+            </CustomerProvider>
 
             {/* Render the employee list when http://localhost:3000/employees */}
-            <Route path="/employee">
-                <EmployeeCard />
-            </Route>
+            <EmployeeProvider>
+                <Route path="/employee">
+                    <EmployeeList />
+                </Route>
+            </EmployeeProvider>
         </>
     )
 }

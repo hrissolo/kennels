@@ -4,23 +4,68 @@
             "id": 1,
             "name": "Doodles",
             "breed": "Poodle",
-            "customerId": 1,
+            "customerId": 3,
             "locationId": 2
-        }
+        } , 
+        {
+            "id": 2,
+            "name": "Papaya",
+            "breed": "Dragon",
+            "customerId": 1,
+            "locationId": 1
+        } ,
+        {
+            "id": 3,
+            "name": "Tweedle",
+            "breed": "Birdie",
+            "customerId": 2,
+            "locationId": 2
+        } 
     ],
     "customers": [
         {
             "id": 1,
             "name": "Hannah Hall",
             "address": "7002 Chestnut Ct"
-        }
+        } , 
+        {
+            "id": 2,
+            "name": "Brenda Long",
+            "address": "8 Crumpet Way"
+        } ,
+        {
+            "id": 3,
+            "name": "Atom Coder",
+            "address": "2020 Woot Lane"
+        } 
     ],
-    "employees": [],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Hailey Rissolo",
+            "locationId": 2
+        } , 
+        {
+            "id": 2,
+            "name": "Jennifer Starkey",
+            "locationId": 1
+        } ,
+        {
+            "id": 3,
+            "name": "Brady Logan",
+            "locationId": 2
+        } , 
+        {
+            "id": 4,
+            "name": "Richie H",
+            "locationId": 1
+        } 
+    ],
     "locations": [
         {
             "id": 1,
             "name": "Nashville North",
-            "address": "8422 Johnson Pike"
+            "address": "8422 Johnson Lane"
         },
         {
             "id": 2,
