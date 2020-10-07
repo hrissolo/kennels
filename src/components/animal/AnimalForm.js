@@ -21,6 +21,7 @@ export const AnimalForm = (props) => {
     const name = useRef(null)
     const location = useRef(null)
     const customer = useRef(null)
+    const breedType = useRef(null)
 
     /*
         Get animal state and location state on initialization.
@@ -38,12 +39,14 @@ export const AnimalForm = (props) => {
         */
         const locationId = parseInt(location.current.value)
         const customerId = parseInt(customer.current.value)
+        const breed = breedType.current.value
 
         if (locationId === 0) {
             window.alert("Please select a location")
         } else {
             addAnimal({
                 name: name.current.value,
+                breed,
                 locationId,
                 customerId
             })
@@ -60,6 +63,12 @@ export const AnimalForm = (props) => {
                 <div className="form-group">
                     <label htmlFor="animalName">Animal name: </label>
                     <input type="text" id="animalName" ref={name} required autoFocus className="form-control" placeholder="Animal name" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="animalBreed">Animal breed: </label>
+                    <input type="text" id="animalBreed" ref={breedType} required className="form-control" placeholder="Animal breed" />
                 </div>
             </fieldset>
             <fieldset>

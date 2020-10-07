@@ -15,29 +15,18 @@
       "locationId": 1
     },
     {
-      "id": 3,
-      "name": "Tweedle",
-      "breed": "Birdie",
-      "customerId": 2,
-      "locationId": 2
-    },
-    {
       "name": "Lil Papaya",
-      "locationId": 1,
-      "customerId": 1,
-      "id": 4
-    },
-    {
-      "name": "Tootie Tot",
+      "breed": "Smol Dragon",
       "locationId": 2,
-      "customerId": 3,
-      "id": 5
+      "customerId": 2,
+      "id": 7
     },
     {
       "name": "Snoot",
+      "breed": "Meow",
       "locationId": 1,
       "customerId": 2,
-      "id": 6
+      "id": 8
     }
   ],
   "customers": [
@@ -58,6 +47,12 @@
       "email": "a@code.com",
       "name": "Atom Coder",
       "address": "2020 Woot Lane"
+    },
+    {
+      "email": "hrissolo@gmail.com",
+      "name": "Hailey Rissolo",
+      "address": "501B Wesley Ave",
+      "id": 5
     }
   ],
   "employees": [
@@ -67,24 +62,9 @@
       "locationId": 2
     },
     {
-      "id": 2,
-      "name": "Jennifer Starkey",
-      "locationId": 1
-    },
-    {
-      "id": 3,
-      "name": "Brady Logan",
-      "locationId": 2
-    },
-    {
       "id": 4,
       "name": "Richie H",
       "locationId": 1
-    },
-    {
-      "name": "Rick",
-      "locationId": 1,
-      "id": 5
     },
     {
       "name": "Hanako",
@@ -95,6 +75,16 @@
       "name": "Tessa",
       "locationId": 1,
       "id": 7
+    },
+    {
+      "name": "Sloth",
+      "locationId": 3,
+      "id": 8
+    },
+    {
+      "name": "Hello",
+      "locationId": 2,
+      "id": 9
     }
   ],
   "locations": [
@@ -107,6 +97,11 @@
       "id": 2,
       "name": "Nashville South",
       "address": "209 Emory Drive"
+    },
+    {
+      "name": "West Side!",
+      "address": "West Nashty",
+      "id": 3
     }
   ]
 }
