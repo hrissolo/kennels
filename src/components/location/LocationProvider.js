@@ -10,7 +10,7 @@ export const LocationContext = createContext()
  This component establishes what data can be used.
  */
 export const LocationProvider = (props) => {
-    const [location, setLocations] = useState([])
+    const [locations, setLocations] = useState([])
 
     const getLocations = () => {
         return fetch("http://localhost:8088/locations")
@@ -37,7 +37,7 @@ export const LocationProvider = (props) => {
     */
     return (
         <LocationContext.Provider value={{
-            location, getLocations, addLocations
+            locations, getLocations, addLocations
         }}>
             {props.children}
         </LocationContext.Provider>
