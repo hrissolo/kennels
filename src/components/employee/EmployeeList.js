@@ -25,14 +25,14 @@ export const EmployeeList = () => {
               New Employee
           </button>
 
-		<div className="employees">
-		    {console.log("EmployeeList: Render")}
-        {
-			employee.map(employee => {
-				return <EmployeeCard key={employee.id} locationId={employee.location.name} name={employee.name} />
-			})
-        }
-        </div>
+      <div className="employees">
+          {console.log("EmployeeList: Render")}
+          {
+        employee.map(employee => {
+          return <EmployeeCard key={employee.id} employee={employee}  />
+        })
+          }
+      </div>
       </>
     )
 }
