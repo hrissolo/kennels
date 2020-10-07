@@ -1,76 +1,112 @@
 {
-    "animals": [
-        {
-            "id": 1,
-            "name": "Doodles",
-            "breed": "Poodle",
-            "customerId": 3,
-            "locationId": 2
-        } , 
-        {
-            "id": 2,
-            "name": "Papaya",
-            "breed": "Dragon",
-            "customerId": 1,
-            "locationId": 1
-        } ,
-        {
-            "id": 3,
-            "name": "Tweedle",
-            "breed": "Birdie",
-            "customerId": 2,
-            "locationId": 2
-        } 
-    ],
-    "customers": [
-        {
-            "id": 1,
-            "name": "Hannah Hall",
-            "address": "7002 Chestnut Ct"
-        } , 
-        {
-            "id": 2,
-            "name": "Brenda Long",
-            "address": "8 Crumpet Way"
-        } ,
-        {
-            "id": 3,
-            "name": "Atom Coder",
-            "address": "2020 Woot Lane"
-        } 
-    ],
-    "employees": [
-        {
-            "id": 1,
-            "name": "Hailey Rissolo",
-            "locationId": 2
-        } , 
-        {
-            "id": 2,
-            "name": "Jennifer Starkey",
-            "locationId": 1
-        } ,
-        {
-            "id": 3,
-            "name": "Brady Logan",
-            "locationId": 2
-        } , 
-        {
-            "id": 4,
-            "name": "Richie H",
-            "locationId": 1
-        } 
-    ],
-    "locations": [
-        {
-            "id": 1,
-            "name": "Nashville North",
-            "address": "8422 Johnson Lane"
-        },
-        {
-            "id": 2,
-            "name": "Nashville South",
-            "address": "209 Emory Drive"
-        }
-    ]
+  "animals": [
+    {
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle",
+      "customerId": 3,
+      "locationId": 2
+    },
+    {
+      "id": 2,
+      "name": "Papaya",
+      "breed": "Dragon",
+      "customerId": 1,
+      "locationId": 1
+    },
+    {
+      "id": 3,
+      "name": "Tweedle",
+      "breed": "Birdie",
+      "customerId": 2,
+      "locationId": 2
+    },
+    {
+      "name": "Lil Papaya",
+      "locationId": 1,
+      "customerId": 1,
+      "id": 4
+    },
+    {
+      "name": "Tootie Tot",
+      "locationId": 2,
+      "customerId": 3,
+      "id": 5
+    },
+    {
+      "name": "Snoot",
+      "locationId": 1,
+      "customerId": 2,
+      "id": 6
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "email": "h@h.com",
+      "name": "Hannah Hall",
+      "address": "7002 Chestnut Ct"
+    },
+    {
+      "id": 2,
+      "email": "b@blong.com",
+      "name": "Brenda Long",
+      "address": "8 Crumpet Way"
+    },
+    {
+      "id": 3,
+      "email": "a@code.com",
+      "name": "Atom Coder",
+      "address": "2020 Woot Lane"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Hailey Rissolo",
+      "locationId": 2
+    },
+    {
+      "id": 2,
+      "name": "Jennifer Starkey",
+      "locationId": 1
+    },
+    {
+      "id": 3,
+      "name": "Brady Logan",
+      "locationId": 2
+    },
+    {
+      "id": 4,
+      "name": "Richie H",
+      "locationId": 1
+    },
+    {
+      "name": "Rick",
+      "locationId": 1,
+      "id": 5
+    },
+    {
+      "name": "Hanako",
+      "locationId": 2,
+      "id": 6
+    },
+    {
+      "name": "Tessa",
+      "locationId": 1,
+      "id": 7
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "8422 Johnson Lane"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "209 Emory Drive"
+    }
+  ]
 }
