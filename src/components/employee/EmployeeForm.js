@@ -1,67 +1,92 @@
-import React, { useContext, useRef, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { LocationContext } from "../location/LocationProvider"
-import { EmployeeContext } from "../employee/EmployeeProvider"
 import "./Employee.css"
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import {EmployeeContext} from "./EmployeeProvider"
 
 export const EmployeeForm = () => {
-    const { addEmployees } = useContext(EmployeeContext)
+    const { addEmployee, getEmployeeById, updateEmployee } = useContext(EmployeeContext)
     const { locations, getLocations } = useContext(LocationContext)
-    
-    /*
-        Create references that can be attached to the input
-        fields in the form. This will allow you to get the
-        value of the input fields later when the user clicks
-        the save button.
 
-        No more `document.querySelector()` in React.
-    */
-    const name = useRef(null)
-    const location = useRef(null)
-    /*
-        Get animal state and location state on initialization.
-    */
+
+    //for edit, hold on to state of animal in this view
+    const [employee, setEmployee] = useState({})
+    //wait for data before button is active
+    const [isLoading, setIsLoading] = useState(true);
+
+    const {employeeId} = useParams();
+	const history = useHistory();
+
+    //when field changes, update state. This causes a re-render and updates the view.
+    //Controlled component
+    const handleControlledInputChange = (event) => {
+        //When changing a state object or array, 
+        //always create a copy make changes, and then set state.
+        const newEmployee = { ...employee }
+        //animal is an object with properties. 
+        //set the property to the new value
+        newEmployee[event.target.name] = event.target.value
+        //update state
+        setEmployee(newEmployee)
+    }
+    
+    // Get customers and locations. If animalId is in the URL, getAnimalById
     useEffect(() => {
-       getLocations()
+        getLocations().then(()=> {
+            if (employeeId){
+                getEmployeeById(employeeId)
+                .then(employee => {
+                    setEmployee(employee)
+                    setIsLoading(false)
+                })
+            } else {
+                setIsLoading(false)
+            }
+       })
     }, [])
 
-    const constructNewEmployee = () => {
-        /*
-            The `location` and `customer` variables below are
-            the references attached to the input fields. You
-            can't just ask for the `.value` property directly,
-            but rather `.current.value` now in React.
-        */
-        const locationId = parseInt(location.current.value)
-
-        if (locationId === 0) {
-            window.alert("Please select a location")
+    const constructEmployeeObject = () => {
+        if (parseInt(employee.locationId) === 0) {
+            window.alert("Please assign to a location")
         } else {
-            addEmployees({
-                name: name.current.value,
-                locationId
-            })
-            .then(() => history.push("/employees"))
+            //disable the button - no extra clicks
+            setIsLoading(true);
+            if (employeeId){
+                //PUT - update
+                updateEmployee({
+                    id: employee.id,
+                    name: employee.name,
+                    locationId: parseInt(employee.locationId)
+                })
+                .then(() => history.push(`/employees/detail/${employee.id}`))
+            }else {
+                //POST - add
+                addEmployee({
+                    name: employee.name,
+                    locationId: parseInt(employee.locationId)
+                })
+                .then(() => history.push("/employees"))
+            }
         }
     }
-
-    const history = useHistory();
-
+    
     return (
         <form className="employeeForm">
-            <h2 className="employeeForm__title">New Employee</h2>
+            <h2 className="employeeForm__title">Edit Employee</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="employeeName">Employee name: </label>
-                    <input type="text" id="employeeName" ref={name} required autoFocus className="form-control" placeholder="Employee name" />
+                    <input type="text" id="employeeName" name="name" required autoFocus className="form-control" 
+                    placeholder="employee name" 
+                    onChange={handleControlledInputChange} 
+                    defaultValue={employee.name}/>
                 </div>
             </fieldset>
-            
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="location">Assign to location: </label>
-                    <select defaultValue="" name="location" ref={location} id="employeeLocation" className="form-control" >
-                        <option value="0">Select a location</option> 
+                    <select value={employee.locationId} name="locationId" id="employeeLocation" className="form-control" onChange={handleControlledInputChange}>
+                        <option value="0">Select a location</option>
                         {locations.map(l => (
                             <option key={l.id} value={l.id}>
                                 {l.name}
@@ -70,15 +95,13 @@ export const EmployeeForm = () => {
                     </select>
                 </div>
             </fieldset>
-           
-            <button type="submit"
-                onClick={evt => {
-                    evt.preventDefault() // Prevent browser from submitting the form
-                    constructNewEmployee()
-                }}
-                className="btn btn-primary">
-                Save Employee
-            </button>
+            <button className="btn btn-primary"
+                disabled={isLoading}
+                onClick={event => {
+                    event.preventDefault() // Prevent browser from submitting the form
+                    constructEmployeeObject()
+                }}>
+            {employeeId ? <>Save Employee</> : <>Add Employee</>}</button>
         </form>
     )
 }
