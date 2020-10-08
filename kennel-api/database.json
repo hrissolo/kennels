@@ -1,13 +1,6 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle",
-      "customerId": 3,
-      "locationId": 2
-    },
-    {
       "id": 2,
       "name": "Papaya",
       "breed": "Dragon",
@@ -67,11 +60,6 @@
       "locationId": 1
     },
     {
-      "name": "Hanako",
-      "locationId": 2,
-      "id": 6
-    },
-    {
       "name": "Tessa",
       "locationId": 1,
       "id": 7
@@ -102,6 +90,11 @@
       "name": "West Side!",
       "address": "West Nashty",
       "id": 3
+    },
+    {
+      "name": "The New One",
+      "address": "fsdfsd",
+      "id": 4
     }
   ]
 }
