@@ -3,9 +3,9 @@
     {
       "id": 2,
       "name": "Papaya",
-      "breed": "Dragon",
-      "customerId": 1,
-      "locationId": 1
+      "breed": "Dwagon",
+      "locationId": 1,
+      "customerId": 1
     },
     {
       "name": "Lil Papaya",
@@ -20,6 +20,20 @@
       "locationId": 1,
       "customerId": 2,
       "id": 8
+    },
+    {
+      "id": 9,
+      "name": "Lizard Babiiiiie",
+      "breed": "lizaaarrrd",
+      "locationId": 3,
+      "customerId": 5
+    },
+    {
+      "name": "Lizard F Baby",
+      "breed": "drag00n",
+      "locationId": 2,
+      "customerId": 2,
+      "id": 10
     }
   ],
   "customers": [
@@ -52,17 +66,12 @@
     {
       "id": 1,
       "name": "Hailey Rissolo",
-      "locationId": 2
+      "locationId": 1
     },
     {
       "id": 4,
       "name": "Richie H",
       "locationId": 1
-    },
-    {
-      "name": "Tessa",
-      "locationId": 1,
-      "id": 7
     },
     {
       "name": "Sloth",
@@ -73,6 +82,11 @@
       "name": "Hello",
       "locationId": 2,
       "id": 9
+    },
+    {
+      "name": "Rick",
+      "locationId": 1,
+      "id": 10
     }
   ],
   "locations": [
@@ -90,11 +104,6 @@
       "name": "West Side!",
       "address": "West Nashty",
       "id": 3
-    },
-    {
-      "name": "The New One",
-      "address": "fsdfsd",
-      "id": 4
     }
   ]
 }

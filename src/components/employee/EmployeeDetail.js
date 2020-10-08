@@ -26,7 +26,7 @@ export const EmployeeDetail = () => {
         <section className="employee">
             <h3 className="employee__name">{employee.name}</h3>
 			<div className="employee__location">Location: {location.name}</div>
-        </section>
+        
 
 
         <button onClick={
@@ -37,6 +37,11 @@ export const EmployeeDetail = () => {
             })
             }}>Fire!!!
         </button>
+
+        <button onClick={() => {
+            history.push(`/employees/edit/${employee.id}`)
+            }}>Edit</button>
+        </section>
         </>
     )
 }

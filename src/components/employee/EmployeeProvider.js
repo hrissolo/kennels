@@ -41,6 +41,17 @@ export const EmployeeProvider = (props) => {
         .then(getEmployees)
     }
 
+    const updateEmployee = employee => {
+        return fetch(`http://localhost:8088/employees/${employee.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(employee)
+        })
+            .then(getEmployees)
+    }
+
     /*
         You return a context provider which has the
         `employees` state, the `addEmployee` function,
@@ -49,7 +60,7 @@ export const EmployeeProvider = (props) => {
     */
     return (
         <EmployeeContext.Provider value={{
-            employee, getEmployees, addEmployees, getEmployeeById, releaseEmployee
+            employee, getEmployees, addEmployees, getEmployeeById, releaseEmployee, updateEmployee
         }}>
             {props.children}
         </EmployeeContext.Provider>
