@@ -15,6 +15,8 @@ import { LocationForm } from "./location/LocationForm"
 import { AnimalDetail } from "./animal/AnimalDetail"
 import { EmployeeDetail } from "./employee/EmployeeDetail"
 import {LocationDetail} from "./location/LocationDetail"
+import { AnimalSearch } from "./animal/AnimalSearch"
+
 
 export const ApplicationViews = (props) => {
     return (
@@ -23,12 +25,6 @@ export const ApplicationViews = (props) => {
             <Route exact path="/">
                 <Home />
             </Route>
-
-            <AnimalProvider>
-                <Route exact path="/animals">
-                    <AnimalList />
-                </Route>
-            </AnimalProvider> 
 
             {/* Render the location list when http://localhost:3000/locations */}
             <LocationProvider>
@@ -69,6 +65,12 @@ export const ApplicationViews = (props) => {
                 </LocationProvider>
             </EmployeeProvider>
 
+            <AnimalProvider>
+            <Route exact path="/animals">
+                <AnimalSearch />
+                <AnimalList />
+            </Route>
+            </AnimalProvider>
 
             <EmployeeProvider>
                 <LocationProvider>
